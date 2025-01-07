@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq1fedcfq5wpi"]
+
+[ext_resource type="VideoStream" path="res://Assets/Cutscenes/Dress-MR-.-Hess.ogv" id="1_1a0hx"]
+
+[node name="Cutscene" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_1a0hx")
+autoplay = true

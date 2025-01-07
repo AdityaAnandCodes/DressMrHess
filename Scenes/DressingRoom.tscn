@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhkaju5cajr00"]
+
+[ext_resource type="Texture2D" uid="uid://bipjhk7cfomqr" path="res://Assets/DressingRoom.jpg" id="1_866o3"]
+[ext_resource type="Texture2D" uid="uid://bi1dcqvu8ld4b" path="res://Assets/PNGs/Character_.png" id="2_w0npv"]
+[ext_resource type="Texture2D" uid="uid://ivm5w5gw5aqv" path="res://Assets/UI/Dress_MR_._Hess__2_-removebg-preview.png" id="3_7j7jp"]
+[ext_resource type="Texture2D" uid="uid://dswchglmh81wt" path="res://Assets/PNGs/Hat_.png" id="4_f1gkx"]
+[ext_resource type="Texture2D" uid="uid://w7jruewlrjah" path="res://Assets/PNGs/Pant_.png" id="5_wuu1x"]
+[ext_resource type="Texture2D" uid="uid://kuub2ompdgte" path="res://Assets/PNGs/Shirt_.png" id="6_7gil4"]
+[ext_resource type="Texture2D" uid="uid://dp8rfsp4x6ypt" path="res://Assets/PNGs/Shoes_.png" id="7_god1i"]
+[ext_resource type="FontFile" uid="uid://dag68ksoeiiyk" path="res://Assets/Fonts/Wedges.ttf" id="8_fr8cu"]
+
+[node name="DressingScene" type="Node2D"]
+
+[node name="DressingRoom" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.164642, 0.204094)
+texture = ExtResource("1_866o3")
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(751, 404)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_w0npv")
+
+[node name="HatButton" type="TextureRect" parent="."]
+offset_left = -40.0
+offset_top = 244.0
+offset_right = 286.0
+offset_bottom = 429.0
+texture = ExtResource("3_7j7jp")
+expand_mode = 1
+
+[node name="Hat2" type="Sprite2D" parent="HatButton"]
+position = Vector2(166, 90)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_f1gkx")
+
+[node name="PantButton" type="TextureRect" parent="."]
+offset_left = -38.0
+offset_top = 391.0
+offset_right = 288.0
+offset_bottom = 576.0
+texture = ExtResource("3_7j7jp")
+expand_mode = 1
+
+[node name="Pant2" type="Sprite2D" parent="PantButton"]
+position = Vector2(163, 92)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("5_wuu1x")
+
+[node name="ShirtButton" type="TextureRect" parent="."]
+offset_left = 118.0
+offset_top = 244.0
+offset_right = 444.0
+offset_bottom = 429.0
+texture = ExtResource("3_7j7jp")
+expand_mode = 1
+
+[node name="Shirt2" type="Sprite2D" parent="ShirtButton"]
+position = Vector2(164, 99)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_7gil4")
+
+[node name="ShoeButton" type="TextureRect" parent="."]
+offset_left = 119.0
+offset_top = 392.0
+offset_right = 445.0
+offset_bottom = 577.0
+texture = ExtResource("3_7j7jp")
+expand_mode = 1
+
+[node name="Shoes2" type="Sprite2D" parent="ShoeButton"]
+position = Vector2(167, 93)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("7_god1i")
+
+[node name="ClosetButton" type="TextureRect" parent="."]
+offset_left = -140.0
+offset_top = 91.0
+offset_right = 542.0
+offset_bottom = 276.0
+texture = ExtResource("3_7j7jp")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 77.0
+offset_top = 158.0
+offset_right = 414.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_fr8cu")
+theme_override_font_sizes/font_size = 30
+text = "Closet Options"
+
+[node name="Hat" type="Sprite2D" parent="."]
+position = Vector2(750, 209)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_f1gkx")
+
+[node name="Shirt" type="Sprite2D" parent="."]
+position = Vector2(751, 438)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_7gil4")
+
+[node name="Shoes" type="Sprite2D" parent="."]
+position = Vector2(753, 578)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_god1i")
+
+[node name="Pant" type="Sprite2D" parent="."]
+position = Vector2(752, 514)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_wuu1x")
