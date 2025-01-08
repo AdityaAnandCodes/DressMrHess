@@ -1,0 +1,77 @@
+[gd_scene load_steps=18 format=3 uid="uid://eh842e0h7mnq"]
+
+[ext_resource type="VideoStream" path="res://Assets/Cutscenes/GameWon.ogv" id="1_w71uy"]
+[ext_resource type="Script" path="res://Scripts/game_won.gd" id="2_acjkx"]
+[ext_resource type="FontFile" uid="uid://dag68ksoeiiyk" path="res://Assets/Fonts/Wedges.ttf" id="3_p7x3h"]
+[ext_resource type="Shader" path="res://Shaders/Text.gdshader" id="3_ufu7u"]
+[ext_resource type="Script" path="res://Scripts/ui_button.gd" id="5_ipk3l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhkr7"]
+shader = ExtResource("3_ufu7u")
+shader_parameter/frequency = 6.0
+shader_parameter/height = 6.0
+shader_parameter/speed = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wk7ar"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myb6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tymb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mikhh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nj26"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbw7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ogo5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krklf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyb4k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8m42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2p1d"]
+
+[node name="GameWon" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_w71uy")
+autoplay = true
+script = ExtResource("2_acjkx")
+
+[node name="StartButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_bhkr7")
+offset_left = 768.0
+offset_top = 868.0
+offset_right = 1127.0
+offset_bottom = 992.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p7x3h")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wk7ar")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_myb6i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5tymb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mikhh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nj26")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rbw7c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2ogo5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_krklf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jyb4k")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_x8m42")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n2p1d")
+text = "Play Again"
+flat = true
+script = ExtResource("5_ipk3l")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=18 format=3 uid="uid://bu3ihj2keluea"]
+
+[ext_resource type="VideoStream" path="res://Assets/Cutscenes/Description.ogv" id="1_b4pr2"]
+[ext_resource type="Script" path="res://Scripts/appearance.gd" id="2_um48m"]
+[ext_resource type="FontFile" uid="uid://dag68ksoeiiyk" path="res://Assets/Fonts/Wedges.ttf" id="3_pa1df"]
+[ext_resource type="Shader" path="res://Shaders/Text.gdshader" id="3_rmjg0"]
+[ext_resource type="Script" path="res://Scripts/ui_button.gd" id="4_umbyi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e33tk"]
+shader = ExtResource("3_rmjg0")
+shader_parameter/frequency = 6.0
+shader_parameter/height = 6.0
+shader_parameter/speed = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfj8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oaml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofkmn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awskt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7sr7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgipi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40r0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rsse"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dcxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ibtii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l52jo"]
+
+[node name="Appearance" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_b4pr2")
+autoplay = true
+script = ExtResource("2_um48m")
+
+[node name="StartButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_e33tk")
+offset_left = 768.0
+offset_top = 868.0
+offset_right = 1127.0
+offset_bottom = 992.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_pa1df")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pfj8f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6oaml")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ofkmn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_awskt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7sr7x")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_mgipi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_40r0w")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4rsse")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5dcxw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ibtii")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l52jo")
+text = "Let's Start"
+flat = true
+script = ExtResource("4_umbyi")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

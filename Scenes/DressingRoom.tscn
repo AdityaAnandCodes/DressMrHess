@@ -110,7 +110,6 @@ texture = ExtResource("7_god1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shoes/ShoeArea"]
 position = Vector2(-11.7647, -2.94116)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sy7ep")
 
 [node name="Pant" type="Sprite2D" parent="."]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8xaew68u6mor"]
+
+[ext_resource type="VideoStream" path="res://Assets/Cutscenes/MissionObjective.ogv" id="1_hnjlm"]
+[ext_resource type="Script" path="res://Scripts/mission_objective.gd" id="2_pqeui"]
+
+[node name="MissionObjective" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_hnjlm")
+autoplay = true
+script = ExtResource("2_pqeui")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

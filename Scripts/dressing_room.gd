@@ -8,6 +8,8 @@ var item_in_area = {
 	"shoe": false
 }
 
+const WHOOSH_MOTION = preload("res://Assets/SoundEffect/whoosh-motion.mp3")
+
 var item_placed = {
 	"hat": false,
 	"shirt": false,
@@ -44,7 +46,7 @@ var final_scale = Vector2(0.5, 0.5)
 @onready var shoes: Sprite2D = $Shoes
 
 func _ready() -> void:
-	pass
+	AudioManager.play_music_level()
 
 func _process(delta: float) -> void:
 	if selected_item:
@@ -55,6 +57,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_released("click"):
 			if item_in_area[selected_item]:
 				sprite.position = final_positions[selected_item]
+				AudioManager.play_FX(WHOOSH_MOTION)
 				item_placed[selected_item] = true
 				sprite.z_index = 0
 				selected_item = null
@@ -116,4 +119,4 @@ func all_items_placed() -> bool:
 	return item_placed.values().count(true) == 4
 
 func change_scene_to_opening() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Opening.tscn")
+	get_tree().change_scene_to_file("res://Scenes/game_won.tscn")
